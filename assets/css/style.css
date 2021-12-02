@@ -1,0 +1,37 @@
+.center{
+    margin: 0 auto;
+}
+
+.dark-edition .form-control{
+    color: black;
+}
+
+.table-trade-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-row {
+    align-items: baseline;
+}
+
+.dark-edition form .error {
+    color: #ff0000;
+}
+
+.form-control.error{
+    border: solid 1px;
+}
+
+.page-item .page-link, .page-item span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7b809a;
+    padding: 0;
+    margin: 0 3px;
+    border-radius: 50%!important;
+    width: 36px;
+    height: 36px;
+    font-size: .875rem;
+}

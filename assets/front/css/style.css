@@ -1,0 +1,39 @@
+.category_ul{
+    padding: 5px;
+}
+
+.category_ul li{
+    list-style: none;
+    padding: 5px 0;
+}
+
+.category_ul li a{
+    color: darkslategrey;
+    font-size: 18px;
+}
+
+.category_ul li:hover a, .category_ul li.active a{
+    color: black;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+}
+
+.hide{
+    display: none;
+}
+
+.item-block{
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+span{
+    word-wrap: normal;
+}
+
+.rating-div.rapStar{
+    position: absolute;
+    left: 80px;
+    top: -12px;
+}
