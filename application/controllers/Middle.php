@@ -8,15 +8,15 @@ class Middle extends CI_Controller {
         
         $uri = uri_string();
 
-        $userdata = $this->session->userdata("user");
-        if (!$userdata ){
-            if (strpos($uri, "admin") > -1){
-                redirect(base_url("user/login"));
-            }
-        }else{
-            if (strpos($uri, "login")){
-                redirect(base_url("review"));
-            }
-        }
+        // $userdata = $this->session->userdata("user");
+        // if (!$userdata ){
+        //     if (strpos($uri, "admin") > -1){
+        //         redirect(base_url("user/login"));
+        //     }
+        // }else{
+        //     if (strpos($uri, "login")){
+        //         redirect(base_url("review"));
+        //     }
+        // }
     }
 }

@@ -24,7 +24,7 @@ class Category extends CI_Controller {
         
         $uri = uri_string();
 
-        $userdata = $this->session->userdata("user");
+        /*$userdata = $this->session->userdata("user");
         if (!$userdata ){
             if (strpos($uri, "admin") > -1){
                 redirect(base_url("user/login"));
@@ -33,7 +33,7 @@ class Category extends CI_Controller {
             if (strpos($uri, "login")){
                 redirect(base_url("review"));
             }
-        }
+        }*/
     }
 
 	public function index()

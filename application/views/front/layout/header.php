@@ -83,7 +83,6 @@
               <span class="nav-link-inner--text d-lg-none">Github</span>
             </a>
           </li>
-          <?php if (!$this->session->userdata("user")){ ?>
           <li class="nav-item d-none d-lg-block">
             <a href="/user/login"  class="btn btn-primary btn-icon">
               <span class="btn-inner--icon">
@@ -92,16 +91,6 @@
               <span class="nav-link-inner--text">Login</span>
             </a>
           </li>
-          <?php }else{ ?>
-          <li class="nav-item d-none d-lg-block">
-            <a href="/admin/trade" target="_blank" class="btn btn-primary btn-icon">
-              <span class="btn-inner--icon">
-                <i class="fa fa-user"></i>
-              </span>
-              <span class="nav-link-inner--text">Admin</span>
-            </a>
-          </li>
-          <?php } ?>
         </ul>
       </div>
     </div>
