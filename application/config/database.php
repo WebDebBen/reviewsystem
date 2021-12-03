@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
+	'hostname' => '92.204.219.118',
+	'username' => 'root',
 	'password' => '',
-	'database' => 'database.sqlite',
-	'dbdriver' => 'sqlite3',
+	'database' => 'budi',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
