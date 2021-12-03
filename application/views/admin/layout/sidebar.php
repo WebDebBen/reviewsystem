@@ -29,7 +29,7 @@
             </p>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="javascript:void(0)">Logout</a>
+            <a class="dropdown-item" href="/user/logout">Logout</a>
         </div>
         </li>
     </ul>

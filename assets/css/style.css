@@ -35,3 +35,12 @@
     height: 36px;
     font-size: .875rem;
 }
+
+span{
+    word-wrap: normal;
+}
+
+.rating-div{
+    padding: 0;
+    margin: 0;
+}

@@ -31,6 +31,7 @@
   <!-- CSS Files -->
   <link href="<?php echo base_url('assets/css/material-dashboard.css?v=2.1.0')?>" rel="stylesheet" />
   <link href="<?php echo base_url('assets/js/plugins/toastr.css')?>" rel="stylesheet" />
+  <link href="<?php echo base_url('assets/front/js/plugins/jsRapStar.css');?>" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
   <link href="<?php echo base_url('assets/css/style.css')?>" rel="stylesheet" />
 </head>
@@ -38,7 +39,7 @@
 <body class="dark-edition">
   <div class="wrapper ">
     <div class="sidebar" data-color="azure" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
-      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
+      <div class="logo"><a href="/review" class="simple-text logo-normal">
           Budibase
         </a></div>
       <div class="sidebar-wrapper">
@@ -62,7 +63,7 @@
             </a>
           </li>
           <li class="nav-item <?php active_url('reviews') ?>">
-            <a class="nav-link" href="/admin/trade">
+            <a class="nav-link" href="/admin/review">
               <i class="material-icons">reviews</i>
               <p>Reviews</p>
             </a>

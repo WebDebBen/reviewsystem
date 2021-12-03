@@ -22,6 +22,7 @@
   <link href="<?php echo base_url('assets/front/css/argon-design-system.css?v=1.2.2')?>" rel="stylesheet"/>
   <link href="<?php echo base_url('assets/front/css/style.css')?>" rel="stylesheet" />
   <link href="<?php echo base_url('assets/front/js/plugins/jsRapStar.css');?>" rel="stylesheet" />
+  <link href="<?php echo base_url('assets/js/plugins/toastr.css')?>" rel="stylesheet" />
 </head>
 
 <body class="index-page">
@@ -82,14 +83,25 @@
               <span class="nav-link-inner--text d-lg-none">Github</span>
             </a>
           </li>
+          <?php if (!$this->session->userdata("user")){ ?>
           <li class="nav-item d-none d-lg-block">
-            <a href="/login" target="_blank" class="btn btn-primary btn-icon">
+            <a href="/user/login"  class="btn btn-primary btn-icon">
               <span class="btn-inner--icon">
                 <i class="fa fa-shopping-cart"></i>
               </span>
               <span class="nav-link-inner--text">Login</span>
             </a>
           </li>
+          <?php }else{ ?>
+          <li class="nav-item d-none d-lg-block">
+            <a href="/admin/trade" target="_blank" class="btn btn-primary btn-icon">
+              <span class="btn-inner--icon">
+                <i class="fa fa-user"></i>
+              </span>
+              <span class="nav-link-inner--text">Admin</span>
+            </a>
+          </li>
+          <?php } ?>
         </ul>
       </div>
     </div>
@@ -127,4 +139,3 @@
     </div>
     <div class="section section-components pb-0" id="section-components">
       <div class="container">
-        <div class="row justify-content-center">

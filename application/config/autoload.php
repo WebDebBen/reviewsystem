@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database');
+$autoload['libraries'] = array('database', 'session');
 
 /*
 | -------------------------------------------------------------------
@@ -135,5 +135,6 @@ $autoload['language'] = array();
 $autoload['model'] = array(
     'Category_model'=> 'category_m',
     'Trade_model'=> 'trade_m',
-    'Review_model'=> 'review_m'
+    'Review_model'=> 'review_m',
+    'Suser_model'=> 'suser_m'
 );

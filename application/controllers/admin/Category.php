@@ -18,6 +18,24 @@ class Category extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+    public function __construct()
+    {
+        parent::__construct();
+        
+        $uri = uri_string();
+
+        $userdata = $this->session->userdata("user");
+        if (!$userdata ){
+            if (strpos($uri, "admin") > -1){
+                redirect(base_url("user/login"));
+            }
+        }else{
+            if (strpos($uri, "login")){
+                redirect(base_url("review"));
+            }
+        }
+    }
+
 	public function index()
 	{
 		$header_data = [

@@ -1,5 +1,5 @@
 <?php foreach($reviews as $item ){?>
-<div class="card mt-1 shadow">
+<div class="card mt-2 shadow">
     <div class="card-body">
         <a href="/review/<?php echo $item->id; ?>">
             <h5 class="info-title text-primary"><?php echo $item->name; ?></h5>

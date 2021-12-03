@@ -19,16 +19,17 @@ class Review_model extends CI_Model {
         $query = "select 
                     trades.*, avg(reviews.rate) avg_rate
                 from trades
-                left join reviews on trades.id=reviews.trade_id where 1=1 ";
+                left join reviews on trades.id=reviews.trade_id and reviews.status=2 where 1=1 ";
         if ($category_id != '' ){
             $query .= ' and trades.category_id=' . $category_id;
         }
         $query .= " group by trades.id order by avg_rate desc";
+
         return $this->db->query($query )->result();
     }
 
     public function reviews_by_trade($trade_id ){
-        return $this->seledb->where("trade_id", $trade_id )->get($this->table )->result();
+        return $this->db->where("trade_id", $trade_id )->where("status", 2)->get($this->table )->result();
     }
 }
 

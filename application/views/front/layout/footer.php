@@ -1,4 +1,4 @@
-</div>
+
       </div>
     </div>
   </div>
@@ -55,6 +55,7 @@
   <script src="<?php echo base_url('assets/front/js/plugins/datetimepicker.js')?>"></script>
   <script src="<?php echo base_url('assets/front/js/plugins/bootstrap-datepicker.min.js')?>"></script>
   <script src="<?php echo base_url('assets/front/js/plugins/jsRapStar.js')?>"></script>
+  <script src="<?php echo base_url('assets/js/plugins/toastr.js')?>"></script>
   <!-- Control Center for Argon UI Kit: parallax effects, scripts for the example pages etc -->
   <!--  Google Maps Plugin    -->
   <script src="<?php echo base_url('assets/front/js/argon-design-system.min.js?v=1.2.2')?>"></script>
@@ -63,7 +64,7 @@
         echo "<script src='" . base_url('assets/front/js/' . $item ) . "'></script>";
     }
   ?>  
-  <script>
+  </script>
 
   <script>
     function scrollToDownload() {

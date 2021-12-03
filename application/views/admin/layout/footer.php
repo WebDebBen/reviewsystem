@@ -85,6 +85,7 @@
   <!--  Notifications Plugin    -->
   <script src="<?php echo base_url('assets/js/plugins/bootstrap-notify.js')?>"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="<?php echo base_url('assets/front/js/plugins/jsRapStar.js')?>"></script>
   <script src="<?php echo base_url('assets/js/plugins/toastr.js')?>"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>

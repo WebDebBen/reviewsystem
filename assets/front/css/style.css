@@ -37,3 +37,14 @@ span{
     left: 80px;
     top: -12px;
 }
+
+.card-body .rapStar{
+    margin: 0
+}
+
+.submit-wrap{
+    display: flex;
+    align-content: flex-end;
+    align-items: center;
+    justify-content: flex-end;
+}
