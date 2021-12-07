@@ -7,16 +7,22 @@ class Middle extends CI_Controller {
         parent::__construct();
         
         $uri = uri_string();
+        
+        $userdata = $this->session->userdata("user");
+        if (!$userdata ){
+            if (strpos($uri, "admin") > -1){
+                header("Location: /user/login");
+            }
+        }else{
+            if (strpos($uri, "login")){
+                header("Location: /review");
+            }
 
-        // $userdata = $this->session->userdata("user");
-        // if (!$userdata ){
-        //     if (strpos($uri, "admin") > -1){
-        //         redirect(base_url("user/login"));
-        //     }
-        // }else{
-        //     if (strpos($uri, "login")){
-        //         redirect(base_url("review"));
-        //     }
-        // }
+            if (strpos($uri, "admin") > -1 ){
+                if ($userdata->role != 1 ){
+                    header("Location: /review");
+                }
+            }
+        }
     }
 }

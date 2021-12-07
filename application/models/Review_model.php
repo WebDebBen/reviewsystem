@@ -19,7 +19,8 @@ class Review_model extends CI_Model {
         $query = "select 
                     trades.*, avg(reviews.rate) avg_rate
                 from trades
-                left join reviews on trades.id=reviews.trade_id and reviews.status=2 where 1=1 ";
+                left join reviews on trades.id=reviews.trade_id and reviews.status=2 
+                where 1=1 ";
         if ($category_id != '' ){
             $query .= ' and trades.category_id=' . $category_id;
         }
@@ -28,8 +29,19 @@ class Review_model extends CI_Model {
         return $this->db->query($query )->result();
     }
 
+    public function load_item_data($trade_id = '' ){
+        if ($trade_id != "" ){
+            $this->db->where("trade_id", $trade_id );
+        }
+        return $this->db->get($this->table )->result();
+    }
+
     public function reviews_by_trade($trade_id ){
         return $this->db->where("trade_id", $trade_id )->where("status", 2)->get($this->table )->result();
+    }
+
+    public function update_status($review_id, $status ){
+        return $this->db->update($this->table, array("status"=> $status ), array('id'=> $review_id ));
     }
 }
 

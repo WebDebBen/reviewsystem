@@ -8,6 +8,9 @@ class Suser_model extends CI_Model {
         $user = $user && count($user ) > 0 ? $user : FALSE;
         return $user;
     }
-}
 
+    public function add_user($data ){
+        return $this->db->insert($this->table, $data );
+    }
+}
 ?>

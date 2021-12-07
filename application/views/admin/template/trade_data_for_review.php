@@ -29,14 +29,10 @@
         <?php } ?>
     </td>
     <td class="text-right">
-        <button type="button" data-id="<?php echo $item->id?>" rel="tooltip" 
-                data-categoryid="<?php echo $item->category_id;?>"
+        <a href="/admin/review/item/<?php echo $item->id;?>"
                 class="btn btn-success btn-round btn-sm edit-btn">
             <i class="material-icons">edit</i>
-        </button>
-        <button type="button" rel="tooltip" data-id="<?php echo $item->id?>" class="btn btn-danger btn-round btn-sm delete-btn">
-            <i class="material-icons">close</i>
-        </button>
+        </a>
     </td>
 </tr>
 <?php } ?>

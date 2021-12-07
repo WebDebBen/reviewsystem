@@ -127,7 +127,8 @@ Coded by www.creative-tim.com
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary my-4" id="signin_btn">Sign in</button>
+                  <button type="button" class="btn btn-primary my-4" id="signin_btn">Sign in</button>  
+                  <a href="/user/register" class="btn btn-success my-4" id="signin_btn">Sign up</a>
                 </div>
               </form>
             </div>

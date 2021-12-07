@@ -1,26 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Review extends CI_Controller {
+include APPPATH . "controllers/Middle.php";
+class Review extends Middle {
 
 	public function __construct()
     {
         parent::__construct();
-        
-        $uri = uri_string();
-
-        // $userdata = $this->session->userdata("user");
-        // if (!$userdata ){
-        //     if (strpos($uri, "admin") > -1){
-        //         redirect(base_url("user/login"));
-        //     }
-        // }else{
-        //     if (strpos($uri, "login")){
-        //         redirect(base_url("review"));
-        //     }
-        // }
-    }
-
+	}
+	
 	public function index()
 	{
         $header_data = [
@@ -47,6 +35,31 @@ class Review extends CI_Controller {
 		$this->load->view("admin/layout/footer", $footer_data );
 	}
 
+	public function item($trade_id ){
+        $header_data = [
+            "title"=> "Review Item"
+        ];
+
+        $side_data = [
+            "title"=> "Review Item"
+        ];
+
+		$footer_data = [
+			"scripts"=> [
+				"review_item.js"
+			]
+		];
+
+		$data = [
+            "reviews"=> $this->review_m->load_item_data($trade_id )
+		];
+
+		$this->load->view("admin/layout/header", $header_data );
+		$this->load->view("admin/layout/sidebar", $side_data);
+		$this->load->view("admin/review_item", $data);
+		$this->load->view("admin/layout/footer", $footer_data );	
+	}
+
 	public function load_trade(){
 		extract($this->input->post());
 
@@ -57,5 +70,12 @@ class Review extends CI_Controller {
 		$pagination = $this->load->view("admin/template/pagination", compact("trade_count", "page", "page_size"), TRUE );
 
 		echo json_encode(["result"=> "success", "data"=> $data, "pagination"=> $pagination ]);
+	}
+
+	public function change_status(){
+		extract($this->input->post());
+
+		$this->review_m->update_status($review_id, $status );
+		echo json_encode(["result"=> "success" ]);
 	}
 }

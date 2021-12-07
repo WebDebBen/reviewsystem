@@ -29,7 +29,7 @@
   <!-- Navbar -->
   <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg bg-white navbar-light position-sticky top-0 shadow py-2">
     <div class="container">
-      <a class="navbar-brand mr-lg-5" href="./index.html">
+      <a class="navbar-brand mr-lg-5" href="/review">
         Review Logo
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
         <div class="navbar-collapse-header">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <a href="./index.html">
+              <a href="/review">
                 <img src="./assets/img/brand/blue.png">
               </a>
             </div>
@@ -59,30 +59,20 @@
           </li>
         </ul>
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://www.facebook.com/" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
-              <i class="fa fa-facebook-square"></i>
-              <span class="nav-link-inner--text d-lg-none">Facebook</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://www.instagram.com/" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
-              <i class="fa fa-instagram"></i>
-              <span class="nav-link-inner--text d-lg-none">Instagram</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://twitter.com/" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">
-              <i class="fa fa-twitter-square"></i>
-              <span class="nav-link-inner--text d-lg-none">Twitter</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://github.com/" target="_blank" data-toggle="tooltip" title="Star us on Github">
-              <i class="fa fa-github"></i>
-              <span class="nav-link-inner--text d-lg-none">Github</span>
-            </a>
-          </li>
+          <?php $userdata = $this->session->userdata("user");
+          $is_admin = $userdata && isset($userdata->role) && $userdata->role == 1 ? true : false;
+          $is_login = $userdata && isset($userdata->name) ? true : false;
+          if ($is_admin ){ ?>
+            <li class="nav-item d-none d-lg-block">
+              <a href="/admin/category"  class="btn btn-primary btn-icon">
+                <span class="btn-inner--icon">
+                  <i class="fa fa-shopping-cart"></i>
+                </span>
+                <span class="nav-link-inner--text">Admin</span>
+              </a>
+            </li>
+            <?php } 
+          if (!$is_login ) {?>
           <li class="nav-item d-none d-lg-block">
             <a href="/user/login"  class="btn btn-primary btn-icon">
               <span class="btn-inner--icon">
@@ -91,6 +81,17 @@
               <span class="nav-link-inner--text">Login</span>
             </a>
           </li>
+          <?php }else{ ?>
+          <li class="nav-item d-none d-lg-block">
+            <a href="/user/logout"  class="btn btn-icon">
+              <span class="btn-inner--icon">
+                <i class="fa fa-shopping-cart"></i>
+              </span>
+              <span class="nav-link-inner--text">Logout</span>
+            </a>
+          </li>
+          <?php } ?>
+          
         </ul>
       </div>
     </div>

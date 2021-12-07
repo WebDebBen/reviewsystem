@@ -44,7 +44,7 @@
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item <?php active_url('dashboard') ?>">
+          <li class="hide nav-item <?php active_url('dashboard') ?>">
             <a class="nav-link" href="/admin/trade">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
@@ -62,7 +62,7 @@
               <p>Trading</p>
             </a>
           </li>
-          <li class="nav-item <?php active_url('reviews') ?>">
+          <li class="nav-item <?php active_url('review') ?>">
             <a class="nav-link" href="/admin/review">
               <i class="material-icons">reviews</i>
               <p>Reviews</p>

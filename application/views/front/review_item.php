@@ -51,8 +51,8 @@
 <div class="row">
     <div class="col-md-6">
         <div class="item-block">
-            <h6 class="title">email : </h6>
-            <p class="ml-1"> <?php echo $item->email; ?></p>       
+            <h6 class="title">name : </h6>
+            <p class="ml-1"> <?php echo $item->username; ?></p>       
         </div>
     </div>
     <div class="col-md-6">
@@ -67,6 +67,9 @@
     </div>
 </div>
 <?php } ?>
+<?php $userdata = $this->session->userdata("user");
+    $is_login = $userdata && isset($userdata->name) ? true : false;
+if ($is_login ){ ?>
 <hr>
 <div class="row mt-2">
     <div class="col-md-12">
@@ -102,3 +105,4 @@
         </div>
     </div>
 </div>
+<?php } ?>

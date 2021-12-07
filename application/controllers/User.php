@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller {
+include APPPATH . "controllers/Middle.php";
+class User extends Middle {
 
 	/**
 	 * Index Page for this controller.
@@ -22,43 +23,50 @@ class User extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        
-        $uri = uri_string();
-
-        // $userdata = $this->session->userdata("user");
-        // if (!$userdata ){
-        //     if (strpos($uri, "admin") > -1){
-        //         redirect(base_url("user/login"));
-        //     }
-        // }else{
-        //     if (strpos($uri, "login")){
-        //         redirect(base_url("review"));
-        //     }
-        // }
-    }
+	}
 
 	public function login()
 	{
 		$this->load->view('login');
 	}
 
+    public function register(){
+        $this->load->view('register');
+    }
+
     public function login_request(){
         extract($this->input->post());
         
         if ($this->suser_m->get_user($useremail, $password)){
-            $this->session->set_userdata("user", $this->suser_m->get_user($useremail, $password ));
+            $this->session->set_userdata("user", $this->suser_m->get_user($useremail, $password )[0]);
             echo json_encode(["result"=>"success"]);
         }else{
             echo json_encode(["result"=> "error"]);
         }
     }
 
-    public function logout(){
-        $this->session->unset_userdata("user");
-        redirect("/review");
-    }
+	public function logout(){
+		$this->session->unset_userdata("user");
+		header("Location: /user/login");
+	}
 
-    public function register(){
-        $this->load->view('register');
-    }
+	public function register_request(){
+		extract($this->input->post());
+
+		$config['upload_path']          = './uploads/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$this->load->library('upload', $config);
+
+		$status = "success";
+		if ( ! $this->upload->do_upload('photo')){
+			$status = "file";
+			$this->session->set_flashdata("status", $status );
+			header("Location: /user/register");
+		}else{
+			$imageDetailArray = $this->upload->data();
+			$photo =  $imageDetailArray['file_name'];
+			$this->suser_m->add_user(["name"=> $name, "password"=> md5($password), "useremail"=> $email, "photo"=> $photo ]);
+			header("Location: /user/login");
+		}
+	}
 }

@@ -9,7 +9,6 @@
                     <option value="<?php echo $item->id ?>"><?php echo $item->cat_name ?></option>
                     <?php } ?>
                 </select>
-                <button type="button" class="ml-2 btn btn-info btn-sm" id="new_trade"><i class='fa fa-plus mr-3'></i> New</button>
             </div>  
             <div class="table-responsive">
                 <table class="table">

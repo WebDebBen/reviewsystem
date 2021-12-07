@@ -35,7 +35,7 @@
     </div>
   </div>
   <div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
+    <div class="dropdown show-dropdown hide">
       <a href="#" data-toggle="dropdown">
         <i class="fa fa-cog fa-2x"> </i>
       </a>
